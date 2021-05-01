@@ -15,8 +15,15 @@
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
         <!-- Links -->
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="admin.html">Administrador</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Administrador
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" onclick="crearBD();">Crear Base de Datos</a>
+                    <a class="dropdown-item" href="#" onclick="crearTabla();">Crear Tabla</a>
+                    <a class="dropdown-item" href="#" onclick="backupDB();">Generar Backup</a>
+                </div>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">

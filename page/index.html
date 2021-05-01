@@ -33,6 +33,16 @@
             xmlhttp.open("GET", "./crear_tabla.php", true);
             xmlhttp.send();
         }
+        function backupDB(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "./backup_db.php", true);
+            xmlhttp.send();
+        }
     </script>
 
 <body>
@@ -46,6 +56,7 @@
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#" onclick="crearBD();">Crear Base de Datos</a>
                     <a class="dropdown-item" href="#" onclick="crearTabla();">Crear Tabla</a>
+                    <a class="dropdown-item" href="#" onclick="backupDB();">Generar Backup</a>
                 </div>
             </li>
              <!-- Dropdown -->
