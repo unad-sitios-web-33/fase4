@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Computer Store Inventory System</title>
+    <!--Icono-->
+    <link rel="icon" type="image/png" href="img/png/logo.png">
+    <meta name="keywords" content="html5, trabajo, unad">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html">Administrador</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Inventario
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="enter_product.html">Ingresar productos al inventario</a>
+                    <a class="dropdown-item" href="edit_product.html">Actualizar producto</a>
+                    <a class="dropdown-item" href="delete_product.html">Eliminar producto</a>
+                    <a class="dropdown-item" href="#">Consultar</a>
+                </div>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Utilidades
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./utilities_value.html">Calcular venta y utilidad</a>
+                    <a class="dropdown-item" href="#">Bytes</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <form>
+				<div> <h1> Convertidor de unidades de medidas informativas </h1>
+                    <div class="form-group">
+                        <label for="value_convert">Cantidad A Convertir:</label>
+                        <input type="number"  class="form-control" id="cant_convert"
+                            placeholder="Ingresa el valor a convertir">
+                    </div>
+                    <div class="form-group">
+                       <label for="exampleInputEmail1">DE:</label>
+                        <select type="text" class="form-control" id="convert_ini" > 
+						<option id="b">byte</option> <option id="k">kilobyte</option> <option id="m">megabyte</option> <option id="g">gigabyte</option> <option id="t">terabyte</option>
+						</select>
+						
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">A:</label>
+                        <select type="text" class="form-control" id="convert_fin" > 
+				<option id="b1">byte</option> <option id="k1">kilobyte</option> <option id="m1">megabyte</option> <option id="g1">gigabyte</option> <option id="t1">terabyte</option>
+						</select>
+						
+                    </div>
+
+                    <button type="button" class="btn btn-dark btn-block"  onclick="convertir()">Convertir</button>
+
+              
+					<div class="form-group">
+                        <label for="exampleInputEmail1">Resultado:</label>
+                        <input type="text" class="form-control" id="result" >
+                    </div>
+					
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function convertir() {
+            const cant_convert = document.getElementById("cant_convert").value
+            const convert_ini = document.getElementById("convert_ini").value
+            const convert_fin = document.getElementById("convert_fin").value
+			
+	    if (convert_ini == "megabyte" && convert_fin == "gigabyte") {
+        result = cant_convert / 1024; 
+        } else if  (convert_ini == "byte" && convert_fin == "kilobyte") {
+        result = cant_convert / 1024;}
+        else if  (convert_ini == "kilobyte" && convert_fin == "megabyte") {
+        result = cant_convert / 1024;}
+        else if  (convert_ini == "gigabyte" && convert_fin == "megabyte") {
+        result = cant_convert * 1024;}
+          else if  (convert_ini == "terabyte" && convert_fin == "gigabyte") {
+        result = cant_convert * 1024;}  
+           else if  (convert_ini == "terabyte" && convert_fin == "megabyte") {
+        result = cant_convert * 1024 *1024;} 
+        else if  (convert_ini == "gigabyte" && convert_fin == "kilobyte") {
+        result = cant_convert * 1024 * 1024;}
+        else if  (convert_ini == "megabyte" && convert_fin == "terabyte") {
+        result = cant_convert / 1024 / 1024;}
+        
+          document.getElementById("result").value = result + " " + convert_fin;
+           
+        
+}
+    </script>
+</body>
+</html>

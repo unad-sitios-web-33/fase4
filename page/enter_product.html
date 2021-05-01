@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Enter products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html">Administrador</a>
+            </li>
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Inventario
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="enter_product.html">Ingresar productos al inventario</a>
+                    <a class="dropdown-item" href="edit_product.html">Actualizar producto</a>
+                    <a class="dropdown-item" href="delete_product.html">Eliminar producto</a>
+                    <a class="dropdown-item" href="consult_product.html">Consultar producto</a>
+                </div>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Utilidades
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./utilities_value.html">Calcular venta y utilidad</a>
+                    <a class="dropdown-item" href="./app_calc_tam.html">Convertidor Unidades de datos</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Ingresar productos al inventario</h2>
+        <form action="#">
+            <div class="form-group">
+                <label for="product_code">Código del producto</label>
+                <input type="text" class="form-control" id="product_code" placeholder="Ingrese el código del producto"
+                    name="product_code">
+            </div>
+            <div class="form-group">
+                <label for="product_name">Nombre</label>
+                <input type="text" class="form-control" id="product_name" placeholder="Ingrese el nombre del producto"
+                    name="product_name">
+            </div>
+            <div class="form-group">
+                <label for="product_brand">Marca</label>
+                <input type="text" class="form-control" id="product_brand" placeholder="Ingrese la marca del producto"
+                    name="product_brand">
+            </div>
+            <div class="form-group">
+                <label for="product_price">Precio</label>
+                <input type="number" class="form-control" id="product_price" placeholder="Ingrese el precio del producto"
+                    name="product_price">
+            </div>
+            <div class="form-group">
+                <label for="product_quantity">Cantidad</label>
+                <input type="number" class="form-control" id="product_quantity" placeholder="Ingrese la cantidad de existencias del producto"
+                    name="product_quantity">
+            </div>
+            <button type="submit" class="btn btn-primary" >Registrar producto</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
