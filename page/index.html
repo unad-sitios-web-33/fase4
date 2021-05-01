@@ -12,6 +12,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function crearBD() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "./crear_bd.php", true);
+            xmlhttp.send();
+        }
+        function crearTabla() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    alert(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "./crear_tabla.php", true);
+            xmlhttp.send();
+        }
+    </script>
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -22,8 +44,8 @@
                     Administrador
                 </a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Crear Base de Datos</a>
-                    <a class="dropdown-item" href="#">Crear Tabla</a>
+                    <a class="dropdown-item" href="#" onclick="crearBD();">Crear Base de Datos</a>
+                    <a class="dropdown-item" href="#" onclick="crearTabla();">Crear Tabla</a>
                 </div>
             </li>
              <!-- Dropdown -->

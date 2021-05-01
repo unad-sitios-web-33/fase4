@@ -13,7 +13,7 @@ if ($conn->connect_error) {
 }
 
 // sql para crear tabla
-$sql = "CREATE TABLE `bdunad33`.`tabla33` (
+$sql = "CREATE TABLE IF NOT EXISTS `bdunad33`.`tabla33` (
   `product_code` varchar(10) NOT NULL PRIMARY KEY COMMENT 'Codigo del producto',
   `product_name` varchar(255) NOT NULL COMMENT 'Nombre del producto',
   `product_brand` varchar(255) NOT NULL COMMENT 'Marca del producto',
