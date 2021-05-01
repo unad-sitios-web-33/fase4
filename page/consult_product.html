@@ -2,60 +2,21 @@
 <html lang="en">
 
 <head>
-    <title>Enter products</title>
+    <title>Consultar productos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function crearBD() {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    alert(this.responseText);
-                }
-            };
-            xmlhttp.open("GET", "./crear_bd.php", true);
-            xmlhttp.send();
-        }
-        function crearTabla() {
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    alert(this.responseText);
-                }
-            };
-            xmlhttp.open("GET", "./crear_tabla.php", true);
-            xmlhttp.send();
-        }
-        function backupDB(){
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    alert(this.responseText);
-                }
-            };
-            xmlhttp.open("GET", "./backup_db.php", true);
-            xmlhttp.send();
-        }
-    </script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark mb-2">
         <!-- Links -->
         <ul class="navbar-nav">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Administrador
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#" onclick="crearBD();">Crear Base de Datos</a>
-                    <a class="dropdown-item" href="#" onclick="crearTabla();">Crear Tabla</a>
-                    <a class="dropdown-item" href="#" onclick="backupDB();">Generar Backup</a>
-                </div>
+            <li class="nav-item">
+                <a class="nav-link" href="admin.html">Administrador</a>
             </li>
             <!-- Dropdown -->
             <li class="nav-item dropdown">
@@ -66,7 +27,7 @@
                     <a class="dropdown-item" href="enter_product.html">Ingresar productos al inventario</a>
                     <a class="dropdown-item" href="edit_product.html">Actualizar producto</a>
                     <a class="dropdown-item" href="delete_product.html">Eliminar producto</a>
-                    <a class="dropdown-item" href="consult_producto.html">Consultar producto</a>
+                    <a class="dropdown-item" href="consult_product.html">Consultar</a>
                 </div>
             </li>
 
@@ -82,21 +43,21 @@
             </li>
         </ul>
     </nav>
-    <div class="container">
-        <h2>Consultar producto</h2>
-        <form action="#">
-            <div class="form-group">
-                <label for="product_code">Código del producto</label>
-                <input type="text" class="form-control" id="product_code" placeholder="Ingrese el código del producto a consultar"
-                    name="product_code">
-            </div>            
-           <button type="submit" class="btn btn-info" >Consultar producto</button>
-        </form>
-    </div>
 
+    <form action="select.php">
+
+
+        <button type="submit" class="btn btn-primary"  >Consultar todos los productos</button>
+    </form>
+
+    <p></p>
+
+
+    <form action="consul_where.html">
+    <button type="submit" class="btn btn-primary"  >Consultar producto por codigo</button>
+</form>
+</div>
+  
 </body>
 
 </html>
-
-
-
