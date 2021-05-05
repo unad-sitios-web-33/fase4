@@ -33,12 +33,16 @@
                 }
                 function backupDB(){
                     var xmlhttp = new XMLHttpRequest();
-                    xmlhttp.onreadystatechange = function() {
-                        if (this.readyState == 4 && this.status == 200) {
-                            alert(this.responseText);
-                        }
-                    };
                     xmlhttp.open("GET", "./backup_db.php", true);
+                    xmlhttp.responseType = "blob";
+                    xmlhttp.onload = function (event) {
+                        var blob = xmlhttp.response;
+                        var fileName = "Backup" 
+                        var link=document.createElement('a');
+                        link.href=window.URL.createObjectURL(blob);
+                        link.download=fileName;
+                        link.click();
+                    };
                     xmlhttp.send();
                 }
             </script>
