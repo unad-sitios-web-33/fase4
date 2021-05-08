@@ -47,6 +47,10 @@
             };
             xmlhttp.send();
         }
+         //Función para genera archivo pdf con el inventario disponible
+         function generarPDF(){
+            { location.href = 'generar_pdf.php'; }
+        }
     </script>
 
 <body>
@@ -61,6 +65,7 @@
                     <a class="dropdown-item" href="#" onclick="crearBD();">Crear Base de Datos</a>
                     <a class="dropdown-item" href="#" onclick="crearTabla();">Crear Tabla</a>
                     <a class="dropdown-item" href="#" onclick="backupDB();">Generar Backup</a>
+                    <a class="dropdown-item" href="#" onclick="generarPDF();">Generar reporte PDF</a>
                 </div>
             </li>
              <!-- Dropdown -->
